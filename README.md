@@ -15,7 +15,7 @@ This program can be run with the steps below:
 
 1. Go into the directory of this project using command line.
 1. Install the program with `gradlew clean install`
-1. Run the word counter command using `java -jar build/install/WordCounter/lib/WordCounter-1.0-SNAPSHOT.jar --help` 
+1. Run the word counter command using `./build/install/WordCounter/bin/WordCounter --help`
 
 Command Arguments:
 
