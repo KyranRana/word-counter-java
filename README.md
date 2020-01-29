@@ -2,15 +2,6 @@
 
 This is a simple command line program written using Gradle and Java 11 which counts words.
 
-This program utilises a package called Picoli (https://picocli.info/) which is a mini command line 
-framework. The reason I used this framework is because it allows the use of parameters and named 
-options totally through annotations. It also provides other benefits such as exception 
-handling and a generated usage guide based on the parameters and named options you create, and 
-the descriptions you give them.
-
-I felt this was convenient considering it enables this program to become more flexible going forward 
-regarding the arguments it accepts. 
-
 This program can be run with the steps below: 
 
 1. Go into the directory of this project using command line.
