@@ -1,7 +1,7 @@
 package cmd;
 
-import cmd.printer.DefaultWordFrequencyPrinter;
-import cmd.printer.WordFrequencyPrinter;
+import cmd.wordprinter.DefaultWordFrequencyPrinter;
+import cmd.wordprinter.WordFrequencyPrinter;
 import cmd.util.FileUtil;
 import cmd.wordcounter.WordCounter;
 import java.io.File;

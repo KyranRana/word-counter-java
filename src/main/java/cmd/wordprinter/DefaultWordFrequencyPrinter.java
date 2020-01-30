@@ -1,4 +1,4 @@
-package cmd.printer;
+package cmd.wordprinter;
 
 import java.util.Comparator;
 import java.util.List;
