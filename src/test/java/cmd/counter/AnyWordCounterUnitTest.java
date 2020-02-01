@@ -1,4 +1,4 @@
-package cmd.wordcounter;
+package cmd.counter;
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,8 +1,8 @@
 package cmd;
 
-import cmd.wordcounter.AnyWordCounter;
-import cmd.wordcounter.EnglishWordCounter;
-import cmd.wordcounter.WordCounter;
+import cmd.counter.AnyWordCounter;
+import cmd.counter.EnglishWordCounter;
+import cmd.counter.WordCounter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

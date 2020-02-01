@@ -1,4 +1,4 @@
-package cmd.wordprinter;
+package cmd.printer;
 
 import static org.junit.Assert.assertEquals;
 

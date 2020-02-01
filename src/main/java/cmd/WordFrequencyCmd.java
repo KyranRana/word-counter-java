@@ -1,12 +1,11 @@
 package cmd;
 
-import cmd.wordprinter.DefaultWordFrequencyPrinter;
-import cmd.wordprinter.WordFrequencyPrinter;
+import cmd.counter.WordCounter;
+import cmd.printer.DefaultWordFrequencyPrinter;
+import cmd.printer.WordFrequencyPrinter;
 import cmd.util.FileUtil;
-import cmd.wordcounter.WordCounter;
+import cmd.validation.DefaultInputFileValidation;
 import java.io.File;
-import java.io.IOException;
-import java.net.URLConnection;
 import java.util.List;
 import java.util.concurrent.Callable;
 import org.javatuples.Pair;
@@ -75,16 +74,7 @@ public class WordFrequencyCmd implements Callable<Integer> {
    */
   @Override
   public Integer call() throws Exception {
-    String absolutePath = textFile.toPath().toString();
-
-    if (!textFile.exists())
-      throw new IOException(String.format("File \"%s\" does not exist!", absolutePath));
-
-    if (!textFile.canRead())
-      throw new IOException(String.format("File \"%s\" is not readable!", absolutePath));
-
-    if (!URLConnection.getFileNameMap().getContentTypeFor(textFile.getName()).equals("text/plain"))
-      throw new IOException(String.format("File \"%s\" is not a text file!", absolutePath));
+    (new DefaultInputFileValidation()).validate(textFile);
 
     String textFileData = FileUtil.readFile(textFile);
 
