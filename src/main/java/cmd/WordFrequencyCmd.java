@@ -28,12 +28,10 @@ public class WordFrequencyCmd implements Callable<Integer> {
   private WordCounterMode mode = WordCounterMode.ANY;
 
   public static void main(String[] args) {
-    int exitCode =
+    System.exit(
         new CommandLine(new WordFrequencyCmd())
             .setExecutionExceptionHandler(new WordFrequencyCmdExceptionHandler())
-            .execute(args);
-
-    System.exit(exitCode);
+            .execute(args));
   }
 
   @Override
