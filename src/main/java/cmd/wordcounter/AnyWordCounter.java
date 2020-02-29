@@ -11,6 +11,7 @@ public class AnyWordCounter implements WordCounter {
   @Override
   public List<Pair<String, Integer>> countWords(String text) {
     Map<String, Integer> occurrencesByWord = new HashMap<>();
+
     StringBuilder wordBuilder = new StringBuilder();
 
     int lengthOfText = text.length();
