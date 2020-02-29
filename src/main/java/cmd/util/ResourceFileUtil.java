@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
-import java.util.Objects;
 
 public class ResourceFileUtil {
 
   public static List<String> readFileLineByLine(File file) throws IOException, URISyntaxException {
     URL resource = ResourceFileUtil.class.getClassLoader().getResource(file.getPath());
-    return FileUtil.readFileLineByLine(new File(Objects.requireNonNull(resource).toURI()));
+    if (resource == null) throw new IOException("file not found!");
+    return FileUtil.readFileLineByLine(new File(resource.toURI()));
   }
 }
