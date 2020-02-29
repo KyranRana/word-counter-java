@@ -1,4 +1,4 @@
-package cmd.printer;
+package cmd.wordprinter;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,11 +13,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit tests for {@link DefaultWordFrequencyPrinter}
- *
- * @author kyranrana
- */
 public class DefaultWordFrequencyPrinterUnitTest {
 
   private final ByteArrayOutputStream customOut = new ByteArrayOutputStream();
@@ -34,18 +29,6 @@ public class DefaultWordFrequencyPrinterUnitTest {
     System.setOut(originalOut);
   }
 
-  /**
-   * Scenario.
-   *
-   * <p>Given list of word and occurrence pairs.
-   *
-   * <p>And no custom comparator being set.
-   *
-   * <p>When {@link DefaultWordFrequencyPrinter#print()} is called
-   *
-   * <p>Then words and occurrences are printed, first ordered from most to least frequent, then
-   * ordered alphabetically by word.
-   */
   @Test
   public void print_withDefaultComparator() {
     List<Pair<String, Integer>> wordsAndOccurrences =
@@ -80,19 +63,6 @@ public class DefaultWordFrequencyPrinterUnitTest {
     assertEquals(output, customOut.toString());
   }
 
-  /**
-   * Scenario.
-   *
-   * <p>Given list of word and occurrence pairs.
-   *
-   * <p>And custom comparator is set which sorts by least to most frequent, then by word
-   * alphabetically.
-   *
-   * <p>When {@link DefaultWordFrequencyPrinter#print()} is called
-   *
-   * <p>Then words and occurrences are printed, first ordered by least to most frequent, then by
-   * word alphabetically.
-   */
   @Test
   public void print_withCustomComparator() {
     List<Pair<String, Integer>> wordsAndOccurrences =
@@ -115,7 +85,7 @@ public class DefaultWordFrequencyPrinterUnitTest {
             .thenComparing(Pair::getValue0);
 
     new DefaultWordFrequencyPrinter(wordsAndOccurrences)
-        .setComparator(cmp)
+        .withComparator(cmp)
         .print();
 
     String output =

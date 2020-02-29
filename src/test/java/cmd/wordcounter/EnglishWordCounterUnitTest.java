@@ -1,4 +1,4 @@
-package cmd.counter;
+package cmd.wordcounter;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,11 +8,6 @@ import java.util.List;
 import org.javatuples.Pair;
 import org.junit.Test;
 
-/**
- * Unit tests for {@link EnglishWordCounter}
- *
- * @author kyranrana
- */
 public class EnglishWordCounterUnitTest {
 
   private WordCounter englishWordCounter;
@@ -21,15 +16,6 @@ public class EnglishWordCounterUnitTest {
     englishWordCounter = new EnglishWordCounter();
   }
 
-  /**
-   * Scenario
-   *
-   * <p>Given text containing English and other words.
-   *
-   * <p>When {@link EnglishWordCounter#countWords(String)} is called
-   *
-   * <p>Then expect a list of pairs stating the occurrence of every English word
-   */
   @Test
   public void countWords_withEnglishAndGibberishWords() {
     assertEquals(englishWordCounter.countWords("ndsfljfs dsfjdsfjksdf").size(), 0);
@@ -101,17 +87,6 @@ public class EnglishWordCounterUnitTest {
                 + "amet lorem ipsum dir amet lorem ipsum dir amet lorem ipsum dir amet"));
   }
 
-  /**
-   * Scenario
-   *
-   * <p>Given text containing English and other words also containing punctuation and special
-   * letters.
-   *
-   * <p>When {@link EnglishWordCounter#countWords(String)} is called
-   *
-   * <p>Then expect a list of pairs stating the occurrence of every English word. Treat punctuation
-   * and special letters as separators.
-   */
   @Test
   public void countWords_withEnglishAndGibberishWordsHavingPunctuationAndSpecialLetters() {
     assertContainSameItems(

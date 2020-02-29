@@ -1,4 +1,4 @@
-package cmd.counter;
+package cmd.wordcounter;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,11 +8,6 @@ import java.util.List;
 import org.javatuples.Pair;
 import org.junit.Test;
 
-/**
- * Unit tests for {@link AnyWordCounter}
- *
- * @author kyranrana
- */
 public class AnyWordCounterUnitTest {
 
   private WordCounter anyWordCounter;
@@ -21,15 +16,6 @@ public class AnyWordCounterUnitTest {
     anyWordCounter = new AnyWordCounter();
   }
 
-  /**
-   * Scenario
-   *
-   * <p>Given text containing real and gibberish words.
-   *
-   * <p>When {@link AnyWordCounter#countWords(String)} is called
-   *
-   * <p>Then expect a list of pairs stating the occurrence of every word (even gibberish words).
-   */
   @Test
   public void countWords_withRealAndGibberishWords() {
     assertContainSameItems(
@@ -155,16 +141,6 @@ public class AnyWordCounterUnitTest {
                 + "español Adiós Buenos día Adiós Adiós Adiós Buenos día Buenos día"));
   }
 
-  /**
-   * Scenario
-   *
-   * <p>Given text with real and gibberish words also containing punctuation and special letters.
-   *
-   * <p>When {@link AnyWordCounter#countWords(String)} is called
-   *
-   * <p>Then expect a list of pairs stating the occurrence of every word (even gibberish words).
-   * Treat punctuation and special letters as separators.
-   */
   @Test
   public void countWords_withRealAndGibberishWordsHavingPunctuationAndSpecialLetters() {
     assertContainSameItems(
