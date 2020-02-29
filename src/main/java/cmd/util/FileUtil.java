@@ -16,9 +16,11 @@ public class FileUtil {
 
   public static List<String> readFileLineByLine(File file) throws IOException {
     List<String> lines;
+
     try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
       lines = reader.lines().collect(Collectors.toList());
     }
+
     return lines;
   }
 }
