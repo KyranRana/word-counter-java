@@ -1,9 +1,7 @@
 package cmd.counter;
 
 import cmd.util.ResourceFileUtil;
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -17,10 +15,10 @@ public class EnglishWordCounter extends AnyWordCounter {
   public EnglishWordCounter() {
     try {
       englishWords =
-          ResourceFileUtil.readFileLineByLine(new File("dictionary/english.txt")).stream()
+          ResourceFileUtil.readFileLineByLine("dictionary/english.txt").stream()
               .collect(Collectors.toMap(Function.identity(), v -> true));
 
-    } catch (IOException | URISyntaxException e) {
+    } catch (IOException e) {
       throw new RuntimeException("Failed to load data source!", e);
     }
   }

@@ -12,11 +12,12 @@ public class FileUtilIntegrationTest {
 
   private static final String TEST_DIR_PREFIX = "util/fileutil";
 
-  private String testDirPrefix;
+  private final ClassLoader classLoader;
+  private final String testDirPrefix;
 
   public FileUtilIntegrationTest() {
-    testDirPrefix =
-        Objects.requireNonNull(getClass().getClassLoader().getResource(TEST_DIR_PREFIX)).getFile();
+    classLoader = getClass().getClassLoader();
+    testDirPrefix = Objects.requireNonNull(classLoader.getResource(TEST_DIR_PREFIX)).getFile();
   }
 
   @Test(expected = IOException.class)
@@ -41,5 +42,13 @@ public class FileUtilIntegrationTest {
     assertEquals(
         Arrays.asList("This", "is", "a", "simple", "test"),
         FileUtil.readFileLineByLine(new File(testDirPrefix + "/read-file-line-by-line-test.txt")));
+  }
+
+  @Test
+  public void readFileLineByLine_whereFileDoesExist_streamVariation() throws Exception {
+    assertEquals(
+        Arrays.asList("This", "is", "a", "simple", "test"),
+        FileUtil.readFileLineByLine(
+            classLoader.getResourceAsStream(TEST_DIR_PREFIX + "/read-file-line-by-line-test.txt")));
   }
 }

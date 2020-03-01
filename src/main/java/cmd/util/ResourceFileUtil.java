@@ -1,20 +1,18 @@
 package cmd.util;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.io.InputStream;
 import java.util.List;
 
 public class ResourceFileUtil {
 
-  public static List<String> readFileLineByLine(File file) throws IOException, URISyntaxException {
-    URL resource = ResourceFileUtil.class.getClassLoader().getResource(file.getPath());
+  public static List<String> readFileLineByLine(String filePath) throws IOException {
+    InputStream fileStream = ResourceFileUtil.class.getClassLoader().getResourceAsStream(filePath);
 
-    if (resource == null) {
+    if (fileStream == null) {
       throw new IOException("file not found!");
     }
 
-    return FileUtil.readFileLineByLine(new File(resource.toURI()));
+    return FileUtil.readFileLineByLine(fileStream);
   }
 }
