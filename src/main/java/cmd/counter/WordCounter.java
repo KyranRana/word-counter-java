@@ -1,4 +1,4 @@
-package cmd.wordcounter;
+package cmd.counter;
 
 import java.util.List;
 import org.javatuples.Pair;

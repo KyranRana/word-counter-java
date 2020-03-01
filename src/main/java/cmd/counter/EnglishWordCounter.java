@@ -1,4 +1,4 @@
-package cmd.wordcounter;
+package cmd.counter;
 
 import cmd.util.ResourceFileUtil;
 import java.io.File;

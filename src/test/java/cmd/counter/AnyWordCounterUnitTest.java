@@ -1,4 +1,4 @@
-package cmd.wordcounter;
+package cmd.counter;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,7 +17,7 @@ public class AnyWordCounterUnitTest {
   }
 
   @Test
-  public void countWords_withRealAndGibberishWords() {
+  public void countWords_withRealAndGibberishWords1() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 1),
@@ -32,7 +32,10 @@ public class AnyWordCounterUnitTest {
             new Pair<>("to", 1),
             new Pair<>("program", 1)),
         anyWordCounter.countWords("Hello my name is Kyran Rana and I like to program"));
+  }
 
+  @Test
+  public void countWords_withRealAndGibberishWords2() {
     assertContainSameItems(
         List.of(
             new Pair<>("lorem", 1),
@@ -80,7 +83,10 @@ public class AnyWordCounterUnitTest {
                 + "incididunt ut labore et dolore magna aliqua Non sodales neque sodales ut "
                 + "Gravida arcu ac tortor dignissim convallis aenean et tortor Ultricies mi "
                 + "eget mauris pharetra et ultrices neque Vel eros donec ac odio tempor orci"));
+  }
 
+  @Test
+  public void countWords_withRealAndGibberishWords3() {
     assertContainSameItems(
         List.of(
             new Pair<>("hey", 1),
@@ -99,7 +105,10 @@ public class AnyWordCounterUnitTest {
         anyWordCounter.countWords(
             "Hey there name name name random text "
                 + "love this kyran kyran kyran test kyran kyran gibberish aa aa aa bbb b b b b"));
+  }
 
+  @Test
+  public void countWords_withRealAndGibberishWords4() {
     assertContainSameItems(
         List.of(
             new Pair<>("hey", 3),
@@ -123,7 +132,10 @@ public class AnyWordCounterUnitTest {
                 + "love this kyran kyran kyran test kyran kyran gibberish aa aa aa bbb b b b b "
                 + "Hey there name name name random text "
                 + "love this kyran kyran kyran test kyran kyran gibberish aa aa aa bbb b b b b "));
+  }
 
+  @Test
+  public void countWords_withRealAndGibberishWords5() {
     assertContainSameItems(
         List.of(
             new Pair<>("tomo", 3),
@@ -142,7 +154,7 @@ public class AnyWordCounterUnitTest {
   }
 
   @Test
-  public void countWords_withRealAndGibberishWordsHavingPunctuationAndSpecialLetters() {
+  public void countWords_withRealAndGibberishWordsHavingPunctuationAndSpecialLetters1() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 1),
@@ -157,7 +169,10 @@ public class AnyWordCounterUnitTest {
             new Pair<>("to", 1),
             new Pair<>("program", 1)),
         anyWordCounter.countWords("Hello, my name is Kyran Rana, and I like to program!"));
+  }
 
+  @Test
+  public void countWords_withRealAndGibberishWordsHavingPunctuationAndSpecialLetters2() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 2),
@@ -185,7 +200,10 @@ public class AnyWordCounterUnitTest {
                 + "Hello.. Hello. Well this is some gibberish, "
                 + "repetitive text, text, text. This is some more text. Some punctuation! &^%*@& should be "
                 + "ignored."));
+  }
 
+  @Test
+  public void countWords_withRealAndGibberishWordsHavingPunctuationAndSpecialLetters3() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 11),
@@ -207,7 +225,10 @@ public class AnyWordCounterUnitTest {
                 + "Rana, and I like to program! Hello, my name is Kyran Rana, and I like to program! "
                 + "Hello, my name is Kyran Rana, and I like to program! Hello, my name is Kyran Rana, and "
                 + "I like to program!"));
+  }
 
+  @Test
+  public void countWords_withRealAndGibberishWordsHavingPunctuationAndSpecialLetters4() {
     assertContainSameItems(
         List.of(
             new Pair<>("buenos", 11),

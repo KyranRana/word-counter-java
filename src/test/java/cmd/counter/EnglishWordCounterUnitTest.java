@@ -1,4 +1,4 @@
-package cmd.wordcounter;
+package cmd.counter;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,9 +17,12 @@ public class EnglishWordCounterUnitTest {
   }
 
   @Test
-  public void countWords_withEnglishAndGibberishWords() {
+  public void countWords_withNoResults() {
     assertEquals(englishWordCounter.countWords("ndsfljfs dsfjdsfjksdf").size(), 0);
+  }
 
+  @Test
+  public void countWords_withEnglishAndGibberishWords1() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 1),
@@ -32,7 +35,10 @@ public class EnglishWordCounterUnitTest {
             new Pair<>("to", 1),
             new Pair<>("program", 1)),
         englishWordCounter.countWords("Hello, my name is Kyran Rana and I like to program"));
+  }
 
+  @Test
+  public void countWords_withEnglishAndGibberishWords2() {
     assertContainSameItems(
         List.of(
             new Pair<>("this", 4),
@@ -88,7 +94,7 @@ public class EnglishWordCounterUnitTest {
   }
 
   @Test
-  public void countWords_withEnglishAndGibberishWordsHavingPunctuationAndSpecialLetters() {
+  public void countWords_withEnglishAndGibberishWordsHavingPunctuationAndSpecialLetters1() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 1),
@@ -101,7 +107,10 @@ public class EnglishWordCounterUnitTest {
             new Pair<>("to", 1),
             new Pair<>("program", 1)),
         englishWordCounter.countWords("Hello, my name is Kyran Rana, and I like to program!"));
+  }
 
+  @Test
+  public void countWords_withEnglishAndGibberishWordsHavingPunctuationAndSpecialLetters2() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 11),
@@ -121,7 +130,10 @@ public class EnglishWordCounterUnitTest {
                 + "Rana, and I like to program! Hello, my name is Kyran Rana, and I like to program! "
                 + "Hello, my name is Kyran Rana, and I like to program! Hello, my name is Kyran Rana, and "
                 + "I like to program!"));
+  }
 
+  @Test
+  public void countWords_withEnglishAndGibberishWordsHavingPunctuationAndSpecialLetters3() {
     assertContainSameItems(
         List.of(
             new Pair<>("hello", 2),
@@ -145,7 +157,10 @@ public class EnglishWordCounterUnitTest {
                 + "Hello.. Hello. Well this is some gibberish, "
                 + "repetitive text, text, text. This is some more text. Some punctuation! &^%*@& should be "
                 + "ignored."));
+  }
 
+  @Test
+  public void countWords_withEnglishAndGibberishWordsHavingPunctuationAndSpecialLetters4() {
     assertContainSameItems(
         List.of(
             new Pair<>("first", 2),

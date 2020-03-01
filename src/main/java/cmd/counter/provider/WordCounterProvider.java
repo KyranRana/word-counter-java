@@ -1,6 +1,6 @@
-package cmd.wordcounter.provider;
+package cmd.counter.provider;
 
-import cmd.wordcounter.WordCounter;
+import cmd.counter.WordCounter;
 
 public interface WordCounterProvider {
 

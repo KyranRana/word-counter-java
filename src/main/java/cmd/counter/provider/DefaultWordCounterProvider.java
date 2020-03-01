@@ -1,9 +1,9 @@
-package cmd.wordcounter.provider;
+package cmd.counter.provider;
 
 import cmd.WordCounterMode;
-import cmd.wordcounter.AnyWordCounter;
-import cmd.wordcounter.EnglishWordCounter;
-import cmd.wordcounter.WordCounter;
+import cmd.counter.AnyWordCounter;
+import cmd.counter.EnglishWordCounter;
+import cmd.counter.WordCounter;
 import java.util.Map;
 import lombok.Getter;
 

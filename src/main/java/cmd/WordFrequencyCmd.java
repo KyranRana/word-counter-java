@@ -1,10 +1,10 @@
 package cmd;
 
+import cmd.counter.WordCounter;
+import cmd.counter.provider.DefaultWordCounterProvider;
+import cmd.printer.DefaultWordFrequencyPrinter;
 import cmd.util.FileUtil;
 import cmd.validation.DefaultInputFileValidation;
-import cmd.wordcounter.WordCounter;
-import cmd.wordcounter.provider.DefaultWordCounterProvider;
-import cmd.wordprinter.DefaultWordFrequencyPrinter;
 import java.io.File;
 import java.util.concurrent.Callable;
 import picocli.CommandLine;
