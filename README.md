@@ -1,3 +1,5 @@
+![Java CI with Gradle](https://github.com/KyranRana/word-counter-java/workflows/Java%20CI%20with%20Gradle/badge.svg)
+
 # Word Counter
 
 This is a simple command line program written using Gradle and Java 11 which counts words.
